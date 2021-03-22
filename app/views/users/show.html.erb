@@ -19,15 +19,3 @@
   <%= f.submit 'Create Book' %>
 
   <% end %>
-
-  <h2>Book detail</h2>
-
-  <%= @user.name %>
-
-  <%= @book.title %>
-
-  <%= @book.body %>
-
-  <%= link_to "Edit", edit_book_path %>
-
-  <%= link_to "Destroy", new_user_session_path, method: :delete, "data-confirm" => "本当に消しますか？" %>
