@@ -7,13 +7,13 @@
   <i class="fas fa-paperclip">About</i>
   <i class="fas fa-user-plus">Sign up</i>
   <i class="fas fa-sign-out-alt">
-  <%= link_to "logaut", destroy_user_session_path, method: :delete %>
+  <%= link_to "logat", destroy_user_session_path, method: :delete %>
   </i>
   <% else %>
   <i class="fas fa-home">Home</i>
   <i class="fas fa-users">About</i>
   <i class="fas fa-book-open">Sign up</i>
-  <i class="fas fa-sign-in-alt">logoin</i>
+  <i class="fas fa-sign-in-alt">login</i>
   <% end %>
 </header>
 
@@ -27,7 +27,7 @@
 
 <P>about various books!</P>
 
-<%= link_to "Log in", new_user_registration_path %>
+<%= link_to "Log in", new_user_session_url %>
 
 <%= link_to "Sign up", new_user_registration_path %>
 
