@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
+
             <h2>User info</h2>
                 <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
 
@@ -33,10 +34,12 @@
 
   <%= @book.body %>
 
-  <%= link_to "Edit", edit_book_path %>
+<% if @user = current_user %>
+    <%= link_to "Edit", edit_book_path %>
+    <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+<% end %>
 
-  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
-          </div>
-      </div>
+    </div>
+    </div>
     </div>
 

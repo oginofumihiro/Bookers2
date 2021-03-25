@@ -1,4 +1,30 @@
+<header>
+    <span>
+      <%= link_to "Bookers", root_path %>
+    </span>
+    <p id="notice"><%= notice %></p>
+    <% if user_signed_in? %>
+    <i class="fas fa-home">
+      <%= link_to "Home", user_path(@user) %>
+    </i>
+    <i class="fas fa-users">
+      <%= link_to "Users", users_path %>
+    </i>
+    <i class="fas fa-book-open">
+      <%= link_to "Books", books_path %>
+    </i>
+    <i class="fas fa-sign-out-alt">
+      <%= link_to "log out", destroy_user_session_path, method: :delete %>
+    </i>
+    </header>
+
 <h2>User info</h2>
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this obj from being saved:
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
 
 <%= form_with model:@user, local:true do |f| %>
 
