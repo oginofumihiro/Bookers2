@@ -1,33 +1,16 @@
-<header>
-  <span>
-    <a href = "https://7f7c69e6f1ee4895abe73745c4bb268d.vfs.cloud9.us-east-1.amazonaws.com/">Bookers</a>
-  </span>
-  <% if user_signed_in? %>
-  <i class="fas fa-home">Home</i>
-  <i class="fas fa-paperclip">About</i>
-  <i class="fas fa-user-plus">Sign up</i>
-  <i class="fas fa-sign-out-alt">
-  <%= link_to "logat", destroy_user_session_path, method: :delete %>
-  </i>
-  <% else %>
-  <i class="fas fa-home">Home</i>
-  <i class="fas fa-users">About</i>
-  <i class="fas fa-book-open">Sign up</i>
-  <i class="fas fa-sign-in-alt">login</i>
-  <% end %>
-</header>
-
 <main>
   <h1>
   welcome to
-    <strong>Bookers!!</strong>
+    <strong>
+      <i class="fas fa-book">Bookers!!</i>
+    </strong>
 </h1>
 
 <p>you can share and exchange your opinions , inpressions , and emotions</p>
 
 <P>about various books!</P>
 
-<%= link_to "Log in", new_user_session_url %>
+<%= link_to "Log in", new_user_session_path %>
 
 <%= link_to "Sign up", new_user_registration_path %>
 
