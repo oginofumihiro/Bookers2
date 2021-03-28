@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <%= render 'users/list', user: @user, book: Book.new %>
+            <%= render 'users/list', user: @user, book: @books %>
         </div>
         <div class="col-md-8 offset-md-1">
  <h2>Book detail</h2>
@@ -17,7 +17,7 @@
                  <td> <%= @book.title %></td>
                  <td><%= @book.body %></td>
 
-                     <% if @user = current_user %>
+                     <% if @user == current_user %>
                 <td><%= link_to "Edit", edit_book_path %></td>
                 <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
                 <% end %>

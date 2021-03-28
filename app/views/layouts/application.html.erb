@@ -21,29 +21,29 @@
           </span>
           <ul class = "navbar-nav ml-auto" >
           <% if user_signed_in? %>
-          <i class="fas fa-home">
+          <i class="fas fa-home nav-link text-light">
             <%= link_to "Home", user_path(current_user.id) %>
           </i>
-          <i class="fas fa-users">
+          <i class="fas fa-users nav-link text-light">
             <%= link_to "Users", users_path %>
           </i>
-          <i class="fas fa-book-open">
+          <i class="fas fa-book-open nav-link text-light">
             <%= link_to "Books", books_path %>
           </i>
-          <i class="fas fa-sign-out-alt">
+          <i class="fas fa-sign-out-alt nav-link text-light">
             <%= link_to "logout", destroy_user_session_path, method: :delete %>
           </i>
           <% else %>
-          <i class="fas fa-home">
+          <i class="fas fa-home nav-link text-light">
             <%= link_to "Home", root_path %>
           </i>
-          <i class="fas fa-users">
+          <i class="fas fa-link nav-link text-light">
             <%= link_to "About", home_about_path %>
           </i>
-          <i class="fas fa-book-open">
+          <i class="fas fa-user-plus nav-link text-light">
             <%= link_to "sign up", new_user_registration_path %>
           </i>
-          <i class="fas fa-sign-in-alt">
+          <i class="fas fa-sign-in-alt nav-link text-light">
             <%= link_to "login", new_user_session_path %>
           </i>
           <% end %>
@@ -51,6 +51,17 @@
         </div>
       </nav>
     </header>
+    <%= render 'layouts/notifications' %>
+
     <%= yield %>
+    <footer>
+      <div class = "container mt-5">
+        <div class = "row">
+          <div class = "mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
